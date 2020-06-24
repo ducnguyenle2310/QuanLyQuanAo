@@ -1,0 +1,59 @@
+﻿@using MyWeb.Models
+@model List<QuanAo>
+
+@{
+    ViewBag.Title = "LoaiQuanAo";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+
+<h1 style="font-size:24px; color:#da291c">@ViewBag.QuanAo</h1>
+
+<ul class="product-area">
+    @{ int i = 0; }
+    @{foreach (var item in Model)
+        {
+            i++;
+            <li style="color:rgba(0, 0, 0, 0.7)">
+                <a href="@Url.Action("XemChiTiet", "QuanAo", new { @maquanao = item.MaQuanAo })" class="img-link">
+                    <b><img src="@Url.Content("~/Images/" + item.Anh)" alt="Picture" style="width:203px; height:280px; margin-bottom:15px"></b>
+                    <p style="margin-bottom:5px">@item.TenQuanAo</p>
+                </a>
+                <h6 style="margin-bottom:5px">@item.GiaBan đ</h6>
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaQuanAo = item.MaQuanAo, @url = Request.Url.ToString() }))
+                {
+                    <div><a href="#"><button style="background-color:#f8f9fa ; border-radius:3px; border:1.5px solid; color:rgba(0, 0, 0, 0.7); cursor:pointer; font-weight:500">Thêm vào giỏ</button></a></div>
+                }
+
+            </li>
+            if (i % 5 == 0)
+            {
+                <div style="clear:both"></div>
+            }
+        }
+    }
+</ul>
+
+@*<ul class="product-area">
+    @{ int i = 0; }
+    @{foreach (var item in Model)
+        {
+            i++;
+            <li style="padding-left :500px;list-style-type:none">
+                <a href="@Url.Action("XemChiTiet", new { @maquanao = item.MaQuanAo })" class="img-link">
+                    <b><img src="@Url.Content("~/Images/" + item.Anh)" alt="Picture" width="235px" height="310px"></b>
+                    <div style="text-align:center;padding-right:500px">
+                        <p>@item.TenQuanAo</p>
+                        <h6 style="text-align:center">@item.GiaBan VND</h6>
+                    </div>
+                </a>
+
+
+
+            </li>
+            if (i % 3 == 0)
+            {
+                <div style="clear:both"></div>
+            }
+        }
+    }
+</ul>*@

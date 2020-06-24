@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86a2edb23d0e479f86c67f5b36fe6e69" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.DonHang" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.KhachHang" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.LoaiQuanAo" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.NhaSanXuat" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiQuanAoModel.QuanAo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_ChiTietDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_ChiTietDonHang_QuanAo" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_QuanAo_LoaiQuanAo" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_QuanAo_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiQuanAoModel.FK_QuanAo_NhaSanXuat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

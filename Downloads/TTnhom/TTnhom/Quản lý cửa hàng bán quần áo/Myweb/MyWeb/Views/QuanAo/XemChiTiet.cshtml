@@ -1,0 +1,59 @@
+﻿@using MyWeb.Models;
+@model QuanAo
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+<div class="item-detail" style="padding-left:1rem; display:flex; align-items:center; justify-content:center; color:rgba(0, 0, 0, 0.7)">
+    <div><img src="@Url.Content("~/Images/" + @Model.Anh)" alt="Picture" style="height:280px; margin-bottom:15px" /></div>
+    <div class="item-description" style="display:flex; flex-direction:column; justify-content:flex-start; margin-left:50px">
+        <div>
+            <p style="margin-bottom: 5px; display:flex; align-items:center; justify-content:flex-start; text-transform:uppercase; font-weight:700"> @Model.TenQuanAo </p>
+            <p style="margin-bottom: 5px; display:flex; align-items:center; justify-content:flex-start; font-weight:700">@Model.GiaBan đ</p>
+        </div>
+        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaQuanAo = Model.MaQuanAo, @url = Request.Url.ToString() }))
+        {
+            <div><a href="#"><button style="background-color:#f8f9fa ; border-radius:3px; border:2px solid; color:rgba(0, 0, 0, 0.7); cursor:pointer; margin-bottom:15px; text-transform:uppercase; width:200px; font-weight:700">Thêm vào giỏ</button></a></div>
+        }
+        <div class="column-1" style="width:100%">
+            <h3 class="title" style="text-transform:uppercase; margin-bottom:5px">Chất liệu</h3>
+            <p style="margin-bottom:5px">100% Cotton</p>
+        </div>
+        <div class="description-instruction" style="display:flex">
+            <div class="column-1" style="width:100%">
+                <h3 class="title" style="text-transform:uppercase; margin-bottom:5px">Hướng dẫn sử dụng</h3>
+                <p style="margin-bottom:5px">
+                    Giặt máy ở chế độ nhẹ nhàng, nhiệt độ thường.
+                    <br />
+                    Không sử dụng hóa chất tẩy rửa có chứa clo.
+                    <br />
+                    Phơi trong bóng mát
+                    <br />
+                    Sấy khô ở nhiệt độ thấp, nhẹ nhàng.
+                    <br />
+                    Là ở nhiệt độ trung bình 150 độ C.
+                    <br />
+                    Giặt với sản phẩm cùng màu.
+                    <br />
+                    Không là lên chi tiết trang trí.
+                </p>
+            </div>
+            <div class="column-1" style="width:100%">
+                <h3 class="title" style="text-transform:uppercase; margin-bottom:5px">Mô tả</h3>
+                <p style="margin-bottom:5px">
+                    Áo phông chất liệu cotton USA, in hình.
+                    <br />
+                    Phom dáng Regular fit, cổ tròn, tay raglan.
+                    <br />
+                    Đường can nách xỏa, gấu tay lơ vê.
+                    <br />
+                    Phù hợp mặc xuân hè, thoải mái, dễ dàng.
+                    <br />
+                    Kết hợp với áo sơ mi, quần Jeans, Khaki và giày thể thao.
+                    <br />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

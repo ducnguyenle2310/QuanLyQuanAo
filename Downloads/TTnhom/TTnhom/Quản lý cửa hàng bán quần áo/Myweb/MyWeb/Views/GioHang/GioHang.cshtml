@@ -1,0 +1,41 @@
+﻿@using MyWeb.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+<div style="display:flex; flex-direction:column; align-items:center">
+    <h2 style="text-transform:uppercase; font-weight:700; font-size:24px; width:1080px">Giỏ hàng</h2>
+    <table style="border:none; width:1080px">
+        <tr style="border-bottom:1px solid; font-weight:700; text-transform:uppercase">
+            <td style="width:150px">Hình ảnh</td>
+            <td style="width:300px">Tên Sản phẩm</td>
+            <td style="width:170px; text-align:center">Mã Sản phẩm</td>
+            <td style="width:150px; text-align:center">Đơn Giá</td>
+            <td style="width:150px; text-align:center">Số Lượng</td>
+            <td style="text-align:center">Thành Tiền</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr style="border-bottom:1px solid">
+                <td style="padding-top:5px; padding-bottom:5px"><img src="@Url.Content("~/Images/" + item.sAnh)" style="width:50px; height:70px" /></td>
+                <td>@item.sTenQuanAo</td>
+                <td style="text-align:center">@item.iMaQuanAo</td>
+                <td style="text-align:center"><b>@item.dDonGia</b></td>
+                <td style="text-align:center">@item.iSoLuong</td>
+                <td style="text-align:center"><b>@item.ThanhTien</b></td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="6" style="padding-top:15px">
+                <div style="background-color:#f8f9fa ; border-radius:3px; border:1.5px solid; color:rgba(0, 0, 0, 0.7); cursor:pointer; font-weight:500; width:100%; text-align:center">
+                    @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

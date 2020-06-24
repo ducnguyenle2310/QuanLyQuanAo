@@ -1,0 +1,41 @@
+﻿@using MyWeb.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+<div style="display:flex; flex-direction:column; justify-content:center; align-items:center">
+    <h2 style="text-transform:uppercase; font-weight:700; font-size:24px; width:1250px">Giỏ hàng</h2>
+    <table style="border:none; width:1250px">
+        <tr style="border-bottom:1px solid; font-weight:700; text-transform:uppercase">
+            <td style="width:150px">Hình ảnh</td>
+            <td style="width:300px">Tên Sản phẩm</td>
+            <td style="width:170px; text-align:center">Mã Sản phẩm</td>
+            <td style="width:150px; text-align:center">Đơn Giá</td>
+            <td style="width:150px; text-align:center">Số Lượng</td>
+            <td>Thành Tiền</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr style="border-bottom:1px solid">
+                <td style="padding-top:5px; padding-bottom:5px"><img src="@Url.Content("~/Images/" + item.sAnh)" style="width:50px; height:70px" /></td>
+                <td>@item.sTenQuanAo</td>
+                <td style="text-align:center">@item.iMaQuanAo</td>
+                <td style="text-align:center"><b>@item.dDonGia</b></td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSP = item.iMaQuanAo }))
+                {
+                    @*<td style="text-align:center">@Html.TextBox("txtSoLuong", @item.iSoLuong)</td>*@
+                    <td style="padding:28px; display:flex; justify-content:center"><input type="number" id="txtSoLuong" name="txtSoLuong" value="@item.iSoLuong" style="width:60px; border-radius:3px; border:1px solid; color:rgba(0, 0, 0, 0.7); cursor:pointer; text-align:center" /></td>
+                    <td style="text-align:center"><b>@item.ThanhTien</b></td>
+                    <td style="width:15px"></td>
+                    <td>
+                        <input type="submit" value="Cập nhật sản phẩm" style="border-radius:3px; border:1px solid; color:rgba(0, 0, 0, 0.7); cursor:pointer; text-align:center; margin-bottom:5px; height:30px; text-transform:uppercase; font-size:16px" />
+                        <div style="text-align:center">@Html.ActionLink("Xóa", "XoaGioHang", new { @iMaSP = item.iMaQuanAo })</div>
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+</div>

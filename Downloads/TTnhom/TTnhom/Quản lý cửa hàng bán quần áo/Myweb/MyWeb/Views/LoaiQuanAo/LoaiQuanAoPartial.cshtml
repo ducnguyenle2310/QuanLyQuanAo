@@ -1,0 +1,80 @@
+﻿@using MyWeb.Models;
+@model List<LoaiQuanAo>
+<ul id="categories-accordion">
+    <li>
+        <ul style="padding-left:0">
+            <li class="arrow-right">
+                <a href="#" style="color:rgba(0, 0, 0, 0.7); font-weight:700"><span>Sản phẩm mới</span></a>
+            </li>
+            <li class=" " style="list-style:none">
+                <a><span style="color:rgba(0, 0, 0, 0.7); font-weight:700">Danh mục sản phẩm</span></a>
+                <ul style="padding-left:0">
+                    @foreach (var item in Model)
+                    {
+                        <li class="arrow-bottom">
+                            <a href="@Url.Action("LoaiQuanAo" , new { @maloai  = item.MaLoai})"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">@item.LoaiQuanAo1</span></a>
+                        </li>
+                    }
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Áo polo</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Đồ mặc nhà</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Đồ mặc bên trong</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Thời trang công sở</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Phụ kiện</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" " style="list-style:none">
+                <a><span style="color:rgba(0, 0, 0, 0.7); font-weight:700">Sản phẩm đặc biệt</span></a>
+                <ul style="padding-left:0">
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Sản phẩm đạt chứng chỉ an toàn</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Thoát ẩm vượt trội</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Áo chống nắng nam</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Cotton USA</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" " style="list-style:none">
+                <a><span style="color:rgba(0, 0, 0, 0.7); font-weight:700">Bộ sưu tập</span></a>
+                <ul style="padding-left:0">
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Mặc đẹp đón Tết</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">CANIFA x Disney</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Shades of Denim</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Young together</span></a>
+                    </li>
+                    <li class="arrow-bottom">
+                        <a href="#"><span style="color:rgba(0, 0, 0, 0.7); font-size:14px">Everyday Linen</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" " style="list-style:none">
+                <a><span style="color:rgba(0, 0, 0, 0.7); font-weight:700">Hướng dẫn chọn size</span></a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+

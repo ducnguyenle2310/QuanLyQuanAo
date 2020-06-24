@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canifa</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.theme.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./header.css">
+    <link href="~/Content/Canifa.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-bottom:0">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="height:40px" id="navbarText">
+                <ul class="navbar-nav mr-auto" style="height:40px">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Cửa hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">KH thân thiết</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tuyển dụng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hỗ trợ</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="DangkyDangnhap">
+                            <div class="function">
+                                @Html.ActionLink("Đăng ký", "DangKy", "NguoiDung")
+                            </div>
+                            <div class="function">
+                                @Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung")
+                            </div>
+                            @Html.Action("GioHangPartial", "GioHang")
+                        </div>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <img src="https://canifa.com/skin/frontend/canifa/default/css/update_bug.css" alt="">
+                    <a href="#"> Miễn phí vận chuyển cho đơn hàng từ 499.000Đ</a>
+                </span>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top:0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="height:80px">
+                <a class="navbar-brand" href="@Url.Action("Index","Home")" style="width:100px; height:50px; display:flex; padding-bottom:0; padding-top:0"><img src="https://canifa.s3.amazonaws.com/media/wysiwyg/info/logo.jpg"></a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">NAM </a>
+                    </li>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">NỮ</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">BÉ TRAI</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">BÉ GÁI</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">NEW ARRIVALS</a>
+                    </li>
+                    </li>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">SALE</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img class="card-img-top" src="https://canifa.com/skin/frontend/canifa/canifa-2019/images/icon/h-search.svg" alt="0"></button>
+                </form>
+            </div>
+        </nav>
+        <div class="nav-attention">
+            <a href="#" class="navlink"><p>GIẢM GIÁ HÀNG NGÀN SẢN PHẨM LÊN TỚI 50%</p></a>
+        </div>
+        <div>@RenderBody()</div>
+        <div class="block-service" style="font-size:14px; color:rgba(0, 0, 0, 0.7)">
+            <div class="item">
+                <div class="img img-refund">
+                </div>
+                <div class="detail">
+                    <h3>QUY ĐỊNH ĐỔI TRẢ</h3>
+                    <p>CANIFA sẵn sàng hỗ trợ cho bạn đổi sản phẩm trong vòng 15 ngày trên toàn hệ thống.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img img-employment">
+                </div>
+                <div class="detail">
+                    <h3>TUYỂN DỤNG TẠI CANIFA</h3>
+                    <p>CANIFA đang tuyển hơn 40 vị trí nhân viên bán hàng tại Hà Nội, Hải Phòng, Vĩnh Yên, Nghệ An, Thái Nguyên; TX. Sơn Tây, Hưng Yên (Sắp khai trương)</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img img-customer">
+                </div>
+                <div class="detail">
+                    <h3>KHÁCH HÀNG THÂN THIẾT</h3>
+                    <p>Chính sách khách hàng thân thiết cảu CANIFA: khi mua đơn hàng trị giá 5.000.000Đ, quý khách sẽ được cấp ngay thẻ VIP có ưu đãi 10% và 20% khi sinh nhật.</p>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer" style="font-size:14px; color:rgba(0, 0, 0, 0.7)">
+            <div class="footer-container">
+                <div class="column-1">
+                    <h3 class="title">Công ty cổ phần CANIFA</h3>
+                    <p>Số ĐKKD: 0107574310, ngày cấp: 23/09/2016. Nơi cấp: Sở Kế hoạch và đầu tư Hà Nội</p>
+                    <p>Địa chỉ trụ sở: Phòng 404 Tòa nhà GP Invest, 170 La Thành, P. Ô Chợ Dừa, Q. Đống Đa, Hà Nội</p>
+                    <p>
+                        Điện thoại: +8424 - 7303.0222
+                        <br />
+                        Fax: +8424 - 6277.6419
+                        <br />
+                        Email: info@canifa.com
+                    </p>
+                    <div class="img-authorization"></div>
+                    <div class="copyright">© 2019 Đức Thắng - Tuấn Dương</div>
+                </div>
+                <div class="column-2">
+                    <h3 class="title">Thương hiệu</h3>
+                    <ul>
+                        <li>
+                            <a rel="nofollow">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a>Blog</a>
+                        </li>
+                        <li>
+                            <a>Tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a>Với cộng đồng</a>
+                        </li>
+                        <li>
+                            <a>Hệ thống cửa hàng</a>
+                        </li>
+                        <li>
+                            <a>Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column-3">
+                    <h3 class="title">Hỗ trợ</h3>
+                    <ul>
+                        <li>
+                            <a>FAQs - Hỏi đáp</a>
+                        </li>
+                        <li>
+                            <a>Chính sách vận chuyển</a>
+                        </li>
+                        <li>
+                            <a>Hướng dẫn chọn kích cỡ</a>
+                        </li>
+                        <li>
+                            <a>Hướng dẫn thanh toán</a>
+                        </li>
+                        <li>
+                            <a>Kiểm tra đơn hàng</a>
+                        </li>
+                        <li>
+                            <a>Quy định đổi hàng</a>
+                        </li>
+                        <li>
+                            <a>Tra cứu điểm thẻ</a>
+                        </li>
+                        <li>
+                            <a>Chính sách KH thân thiết</a>
+                        </li>
+                        <li>
+                            <a>Chính sách bảo mật thông tin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column-4">
+                    <div class="footer-subscribe">
+                        <h3 class="title">Đăng ký nhận tin</h3>
+                        <div class="fill-field">
+                            <input type="text" />
+                            <div class="button-submit">
+                                <span>GỬI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <h3 class="title">Kết nối</h3>
+                        <div class="footer-icon facebook"></div>
+                        <div class="footer-icon instagram"></div>
+                        <div class="footer-icon youtube"></div>
+                    </div>
+                    <div class="footer-logo">
+                        <div class="img-barcode"></div>
+                        <div class="img-app">
+                            <div class="appstore"></div>
+                            <div class="playstore"></div>
+                        </div>
+                        <div class="img-payment"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

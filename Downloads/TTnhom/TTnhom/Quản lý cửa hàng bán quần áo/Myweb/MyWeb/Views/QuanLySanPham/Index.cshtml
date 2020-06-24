@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MyWeb.Models.QuanAo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm", "ThemMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaQuanAo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenQuanAo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiQuanAo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhaCungCap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhaSanXuat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaQuanAo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenQuanAo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Images/" + item.Anh)" alt="Picture" width="100px" height="200px">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiQuanAo.LoaiQuanAo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhaCungCap.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhaSanXuat.TenNSX)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh Sửa", "ChinhSua", new { @MaQuanAo = item.MaQuanAo }) |
+            @Html.ActionLink("Hiển Thị", "HienThi", new { @MaQuanAo = item.MaQuanAo })  |
+            @Html.ActionLink("Xóa", "Xoa", new { @MaQuanAo = item.MaQuanAo })
+        </td>
+    </tr>
+}
+
+</table>
