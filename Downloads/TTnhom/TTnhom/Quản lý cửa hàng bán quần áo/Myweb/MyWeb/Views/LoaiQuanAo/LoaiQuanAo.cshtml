@@ -34,26 +34,26 @@
 </ul>
 
 @*<ul class="product-area">
-    @{ int i = 0; }
-    @{foreach (var item in Model)
-        {
-            i++;
-            <li style="padding-left :500px;list-style-type:none">
-                <a href="@Url.Action("XemChiTiet", new { @maquanao = item.MaQuanAo })" class="img-link">
-                    <b><img src="@Url.Content("~/Images/" + item.Anh)" alt="Picture" width="235px" height="310px"></b>
-                    <div style="text-align:center;padding-right:500px">
-                        <p>@item.TenQuanAo</p>
-                        <h6 style="text-align:center">@item.GiaBan VND</h6>
-                    </div>
-                </a>
-
-
-
-            </li>
-            if (i % 3 == 0)
+        @{ int i = 0; }
+        @{foreach (var item in Model)
             {
-                <div style="clear:both"></div>
+                i++;
+                <li style="padding-left :500px;list-style-type:none">
+                    <a href="@Url.Action("XemChiTiet", new { @maquanao = item.MaQuanAo })" class="img-link">
+                        <b><img src="@Url.Content("~/Images/" + item.Anh)" alt="Picture" width="235px" height="310px"></b>
+                        <div style="text-align:center;padding-right:500px">
+                            <p>@item.TenQuanAo</p>
+                            <h6 style="text-align:center">@item.GiaBan VND</h6>
+                        </div>
+                    </a>
+
+
+
+                </li>
+                if (i % 3 == 0)
+                {
+                    <div style="clear:both"></div>
+                }
             }
         }
-    }
-</ul>*@
+    </ul>*@
